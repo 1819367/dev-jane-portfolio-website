@@ -322,6 +322,48 @@ nav {
   }
 }
 
+/* about me section */
+
+.about-me {
+  max-width: 1000px; /*this matches the section above*/
+  margin: 0 auto; /*for centering*/
+}
+
+.about-me__img {
+  box-shadow: var(--bs);
+}
+
+@media(min-width: 600px) {
+  .about-me {
+    display: grid;
+    grid-template-columns: 1fr 200px;
+    grid-template-areas: 
+      "title img"
+      "subtitle img"
+      "text img";
+    grid-column-gap: 2em;
+  }
+
+  .section__title--about{
+    grid-area: title;
+  }
+
+  .section__subtitle--about {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    position: relative; /*moves the subtitle to the forefront*/
+    left: -1em; /*moves it to the left by 2em*/
+    width: calc(100% + 2em); /*this allows the banner to 'stick' out on both sides a little bit*/
+    padding-left: 1em; /*this lines up the text on the left side */
+    padding-right: calc(200px + 4em); /*this prevents the text from touching the image.*/
+  }
+
+  .about-me__img {
+    grid-area: img;
+    position: relative; /*moves the image on top*/
+    z-index: 2; /*this makes sure it's always on top*/
+  }
+}
 
 
 /* ==========================================================================
