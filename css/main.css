@@ -97,8 +97,8 @@ textarea {
 /* set up custom properties in the root */
 :root {
   /* set up font fammily primary and font family secondary */
-  --ff-primary: "Source Sans Pro", "sans-serif";
-  --ff-secondary: "Source Code Pro", monospace;
+  --ff-primary: 'Source Sans Pro', 'sans-serif';
+  --ff-secondary: 'Source Code Pro', monospace;
 
   /* set up font weight */
   --fw-reg: 300;
@@ -107,7 +107,7 @@ textarea {
   /* set up the colors */
   --clr-light: #fff;
   --clr-dark: #303030;
-  --clr-accent: #16E0BD;
+  --clr-accent: #16e0bd;
 
   /* set up font sizes */
   --fs-h1: 3rem;
@@ -116,9 +116,8 @@ textarea {
   --fs-body: 1rem;
 
   /* set up box shadow */
-  --bs: 0.25em 0.25em 0.75em rgba(0,0,0,.25),
-        0.125em 0.125em 0.25em rgba(0,0,0,.15); /*second, layered box shadow*/
-
+  --bs: 0.25em 0.25em 0.75em rgba(0, 0, 0, 0.25),
+    0.125em 0.125em 0.25em rgba(0, 0, 0, 0.15); /*second, layered box shadow*/
 }
 
 /* redefine the font sizes to make them bigger at larger screen sizes. */
@@ -126,13 +125,17 @@ textarea {
 @media (min-width: 800px) {
   :root {
     --fs-h1: 4.5rem;
-    --fs-h2: 3.75rem; 
+    --fs-h2: 3.75rem;
     --fs-h3: 1.5rem;
     --fs-body: 1.125rem;
-   }
+  }
 }
 
 /* General Styles */
+
+html {
+  scroll-behavior: smooth;
+}
 
 body {
   background: var(--clr-light);
@@ -165,13 +168,13 @@ strong {
 
 .btn {
   display: inline-block;
-  padding: .5em 2.5em;
+  padding: 0.5em 2.5em;
   background: var(--clr-accent);
   color: var(--clr-dark);
   text-decoration: none;
   font-weight: var(--fw-bold);
   cursor: pointer;
-  font-size: .8rem;
+  font-size: 0.8rem;
   text-transform: uppercase;
   letter-spacing: 2px;
   transition: transform 200ms ease-in-out;
@@ -183,23 +186,29 @@ strong {
 
 /* Typography*/
 
-h1, 
+h1,
 h2,
 h3 {
   line-height: 1; /*1.1 => 1, With larger font sizes, in general, if they break on 2 lines, they need a smaller line height*/
   margin: 0;
 }
 
-h1 {font-size: var(--fs-h1);}
-h2 {font-size: var(--fs-h2);}
-h3 {font-size: var(--fs-h3);}
+h1 {
+  font-size: var(--fs-h1);
+}
+h2 {
+  font-size: var(--fs-h2);
+}
+h3 {
+  font-size: var(--fs-h3);
+}
 
 /* skipped the header section for now nd continued setting up the typography */
 
 /*--intro typograhy-- */
 
 .section__title {
-  margin-bottom: .25em;
+  margin-bottom: 0.25em;
 }
 
 .section__title--intro {
@@ -221,7 +230,7 @@ h3 {font-size: var(--fs-h3);}
   background: var(--clr-accent);
   font-family: var(--ff-secondary);
   margin-bottom: 1em;
-  padding: .25em 1em;
+  padding: 0.25em 1em;
 }
 
 .section__subtitle--work {
@@ -246,7 +255,7 @@ header {
 .nav {
   position: fixed; /*pulls the nav out of the flow*/
   background: var(--clr-dark);
-  color:var(--clr-light);
+  color: var(--clr-light);
   top: 0;
   bottom: 0;
   left: 0;
@@ -254,7 +263,7 @@ header {
   z-index: 100;
 
   transform: translateX(100%); /*moves nav out of view*/
-  transition: transform 250ms cubic-bezier(.5, 0, .5, 1);
+  transition: transform 250ms cubic-bezier(0.5, 0, 0.5, 1);
 }
 
 .nav__list {
@@ -279,8 +288,8 @@ header {
   color: var(--clr-accent);
 }
 
-.nav-toggle {
-  padding: .5em;
+.nav__toggle {
+  padding: 0.5em;
   background: transparent;
   border: 0;
   cursor: pointer;
@@ -290,15 +299,36 @@ header {
   z-index: 1000;
 }
 
+.nav__open .nav {
+  transform: translateX(0%); /*moves nav into view*/
+}
+
+.nav__open .nav__toggle {
+  position: fixed; /*changed from absolute position */
+}
+
+.nav__open .hamburger {
+  transform: rotate(.625turn);
+}
+
+.nav__open .hamburger::before {
+  transform: rotate(90deg) translateX(-6px);
+}
+
+.nav__open .hamburger::after {
+  opacity: 0;
+}
+
+
 .hamburger {
-  display: block;  /*default is span which is inline.*/
+  display: block; /*default is span which is inline.*/
   position: relative;
 }
 
 .hamburger,
 .hamburger::before,
 .hamburger::after {
-  background: var(--clr-dark);
+  background: var(--clr-accent);
   width: 2em;
   height: 3px;
   border-radius: 1em;
@@ -313,9 +343,13 @@ header {
   right: 0;
 }
 
-.hamburger::before { top: 6px; }
-.hamburger::after { bottom: 6px }
+.hamburger::before {
+  top: 6px;
+}
 
+.hamburger::after {
+  bottom: 6px;
+}
 
 /* Intro section */
 
@@ -338,8 +372,8 @@ header {
     margin: 0 auto; /*to center it*/
     grid-column-gap: 1em; /*added for spacing, so text is right up against the image*/
     grid-template-areas:
-      "img title"
-      "img subtitle";
+      'img title'
+      'img subtitle';
     grid-template-columns: min-content max-content;
   }
 
@@ -350,11 +384,12 @@ header {
     z-index: 2;
   }
 
-  .section__subtitle--intro { /*this could be place in general typography*/
+  .section__subtitle--intro {
+    /*this could be place in general typography*/
     align-self: start; /*this stops it from stretching down.*/
     grid-column: -1 / 1; /*this causes it to strectch the whole length of the grid, except it going underneath the other elements.  by default they don't want to overlap*/
     grid-row: 2; /*this moves the */
-    text-align: right; 
+    text-align: right;
     position: relative;
     left: -1.52em;
     width: calc(100% + 1.5em);
@@ -383,7 +418,7 @@ header {
   width: 2em;
   height: 1px;
   margin: 0.5em auto 1em;
-  background:var(--clr-light);
+  background: var(--clr-light);
   opacity: 0.25;
 }
 
@@ -398,13 +433,13 @@ header {
 
 @media (min-width: 800px) {
   .services {
-      display: flex;
-      max-width: 1000px;
-      margin-left: auto;
-      margin-right: auto;
+    display: flex;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
   }
 
-  .service  + .service {
+  .service + .service {
     margin-left: 2em;
   }
 }
@@ -420,18 +455,18 @@ header {
   box-shadow: var(--bs);
 }
 
-@media(min-width: 600px) {
+@media (min-width: 600px) {
   .about-me {
     display: grid;
     grid-template-columns: 1fr 200px;
-    grid-template-areas: 
-      "title img"
-      "subtitle img"
-      "text img";
+    grid-template-areas:
+      'title img'
+      'subtitle img'
+      'text img';
     grid-column-gap: 2em;
   }
 
-  .section__title--about{
+  .section__title--about {
     grid-area: title;
   }
 
@@ -440,9 +475,13 @@ header {
     grid-row: 2;
     position: relative; /*moves the subtitle to the forefront*/
     left: -1em; /*moves it to the left by 2em*/
-    width: calc(100% + 2em); /*this allows the banner to 'stick' out on both sides a little bit*/
+    width: calc(
+      100% + 2em
+    ); /*this allows the banner to 'stick' out on both sides a little bit*/
     padding-left: 1em; /*this lines up the text on the left side */
-    padding-right: calc(200px + 4em); /*this prevents the text from touching the image.*/
+    padding-right: calc(
+      200px + 4em
+    ); /*this prevents the text from touching the image.*/
   }
 
   .about-me__img {
@@ -456,7 +495,7 @@ header {
 
 .my__work {
   background: var(--clr-dark);
-  color:var(--clr-light);
+  color: var(--clr-light);
   background-origin: padding-box;
   text-align: center;
 }
@@ -473,9 +512,7 @@ header {
 }
 
 .portfolio__img {
-  transition: 
-    transform 750ms cubic-bezier(.5, 0, .5, 1),
-    opacity 250ms linear;
+  transition: transform 750ms cubic-bezier(0.5, 0, 0.5, 1), opacity 250ms linear;
 }
 
 .portfolio__item:focus {
@@ -486,9 +523,8 @@ header {
 .portfolio__img:hover,
 .portfolio__item:focus .portfolio__img {
   transform: scale(1.2);
-  opacity: .5;
-
-} 
+  opacity: 0.5;
+}
 
 /* footer */
 
@@ -498,7 +534,7 @@ header {
   text-align: center;
   padding: 2.5em 0;
   margin: 0 auto;
-  font-size: var(--fs-h3); 
+  font-size: var(--fs-h3);
 }
 
 .footer a {
@@ -512,7 +548,7 @@ header {
 
 .footer__link:hover,
 .social__list--link:hover {
-  opacity: .7;
+  opacity: 0.7;
 }
 
 .footer__link:hover {
@@ -528,11 +564,11 @@ header {
 }
 
 .social__list--item {
-  margin: 0 .5em;
+  margin: 0 0.5em;
 }
 
 .social__list--link {
-  padding: .5em;  /*make it easier to press on icons*/
+  padding: 0.5em; /*make it easier to press on icons*/
 }
 
 /* ==========================================================================
@@ -609,7 +645,7 @@ header {
 
 .clearfix::before,
 .clearfix::after {
-  content: " ";
+  content: ' ';
   display: table;
 }
 
@@ -657,20 +693,20 @@ header {
   }
 
   a[href]::after {
-    content: " (" attr(href) ")";
+    content: ' (' attr(href) ')';
   }
 
   abbr[title]::after {
-    content: " (" attr(title) ")";
+    content: ' (' attr(title) ')';
   }
 
   /*
    * Don't show links that are fragment identifiers,
    * or use the `javascript:` pseudo protocol
    */
-  a[href^="#"]::after,
-  a[href^="javascript:"]::after {
-    content: "";
+  a[href^='#']::after,
+  a[href^='javascript:']::after {
+    content: '';
   }
 
   pre {
@@ -708,4 +744,3 @@ header {
     page-break-after: avoid;
   }
 }
-
