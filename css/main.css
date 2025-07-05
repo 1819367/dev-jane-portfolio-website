@@ -308,7 +308,7 @@ header {
 }
 
 .nav__open .hamburger {
-  transform: rotate(.625turn);
+  transform: rotate(0.625turn);
 }
 
 .nav__open .hamburger::before {
@@ -318,7 +318,6 @@ header {
 .nav__open .hamburger::after {
   opacity: 0;
 }
-
 
 .hamburger {
   display: block; /*default is span which is inline.*/
@@ -569,6 +568,20 @@ header {
 
 .social__list--link {
   padding: 0.5em; /*make it easier to press on icons*/
+}
+
+/* Individual portfolio item styles template */
+
+.portfolio__item--individual {
+  padding: 0 2em 2em;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.portfolio__item--individual p {
+  max-width: 600px; /*easier to read */
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* ==========================================================================

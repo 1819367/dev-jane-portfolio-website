@@ -1,0 +1,109 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <title>DevJane Portfolio Project</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta property="og:title" content="">
+  <meta property="og:type" content="">
+  <meta property="og:url" content="">
+  <meta property="og:image" content="">
+
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="apple-touch-icon" href="icon.png">
+  <!-- Place favicon.ico in the root directory -->
+
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/main.css">
+
+  <meta name="theme-color" content="#fafafa">
+
+  <!-- google fonts for project-->
+   <!-- Update these with your own fonts -->
+  <!-- scrimba font link -->
+  <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,900|Source+Sans+Pro:300,900&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <script src="https://kit.fontawesome.com/e389a81158.js" crossorigin="anonymous"></script>
+  
+  <!-- Link to JavaScript file -->
+  <!-- <script defer type='module' src="js/main.js"></script> -->
+  <script defer src="js/main.js"></script>
+</head>
+
+<body>
+  <!-- Add your site or application content here -->
+  <header>
+    <div class="logo">
+      <img src="./images/devjane.png" alt="">
+    </div>
+    <button class="nav__toggle" aria-label="toggle navigation">
+      <span class="hamburger"></span>
+    </button>
+    <nav class="nav">
+      <ul class="nav__list">
+        <li class="nav__item"><a href="index.html" class="nav__link">Home</a></li>
+        <li class="nav__item"><a href="index.html#services" class="nav__link">My Services</a></li>
+        <li class="nav__item"><a href="index.html#about" class="nav__link">About Me</a></li>
+        <li class="nav__item"><a href="index.html#work" class="nav__link">My Work</a></li>
+      </ul>
+    </nav>
+  </header>
+  <!-- Template File -->
+  
+    <!--Introduction  -->
+  <section class="intro" >
+    <h1 class="section__title section__title--intro">
+      The title <strong>of my project</strong>
+    </h1>
+    <p class="section__subtitle section__subtitle--intro">a short subtitle</p>
+    <img class="intro__img" src="./images/portfolio-01.jpg" alt="">
+  </section>
+
+  <div class='portfolio__item--individual'>
+    <p>Voluptatibus, soluta blanditiis! Incidunt ea unde itaque illo molestiae eligendi sint culpa nobis voluptas sapiente voluptate, magnam ipsum eius earum?</p>
+    <img src="./images/portfolio-details.jpg" alt="">
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Saepe et amet tenetur! Fugit sequi optio corrupti fugiat ducimus consequatur incidunt?</p>
+    <p>Voluptatibus, soluta blanditiis! Incidunt ea unde itaque illo molestiae eligendi sint culpa nobis voluptas sapiente voluptate, magnam ipsum eius earum?</p>
+  </div>
+
+   <!-- Footer -->
+    <footer class="footer">
+      <!-- replace with your own email address -->
+      <a href="mailto:hello@jane.dev" class="footer__link">hello@jane.dev</a>
+      <ul class="social__list">
+        <li class="social__list--item">
+          <a href="https://codepen.com" class="social__list--link">
+            <i class="fa-brands fa-codepen"></i>
+          </a>
+        </li>
+        <li class="social__list--item">
+          <a href="https://dribble.com" class="social__list--link">
+            <i class="fa-brands fa-dribbble"></i>
+          </a>
+        </li>
+        <li class="social__list--item">
+          <a href="https://twitter.com" class="social__list--link">
+            <i class="fa-brands fa-x-twitter"></i>
+          </a>
+        </li>
+        <li class="social__list--item">
+          <a href="https://github.com" class="social__list--link">
+            <i class="fa-brands fa-github"></i>
+          </a>
+        </li>
+      </ul>
+    </footer>
+
+  <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+  <script>
+    window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
+    ga('create', 'UA-XXXXX-Y', 'auto'); ga('set', 'anonymizeIp', true); ga('set', 'transport', 'beacon'); ga('send', 'pageview')
+  </script>
+  <script src="https://www.google-analytics.com/analytics.js" async></script>
+</body>
+
+</html>

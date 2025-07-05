@@ -10,3 +10,16 @@ navLinks.forEach(link => {
     document.body.classList.remove('nav__open')
   })
 })
+
+let button = document.querySelector('button')
+
+button.addEventListener('click', function () {
+  console.log(this)
+})
+
+button.addEventListener('click', e => {
+  console.log(this)
+  console.log(e.currentTarget)
+})
+
+
